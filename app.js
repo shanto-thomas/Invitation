@@ -1,4 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Force scroll to top on load
+    if (history.scrollRestoration) {
+        history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+
     // Initialize AOS
     AOS.init({
         duration: 1000,

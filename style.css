@@ -182,6 +182,7 @@ body {
     margin-bottom: 5px;
     letter-spacing: 2px;
     line-height: 1.2;
+    text-transform: capitalize;
 }
 
 .hero-bible-verse {
@@ -342,6 +343,7 @@ body {
     font-size: 3.5rem; 
     color: var(--maroon); 
     line-height: 1; 
+    text-transform: capitalize;
 }
 
 .invitation-names .and { 
@@ -456,7 +458,7 @@ body {
 
 
 .contact-info-text { flex: 1; }
-.contact-card-v2 h4 { font-family: var(--heading-font); color: var(--maroon); font-size: 1.3rem; margin-bottom: 5px; }
+.contact-card-v2 h4 { font-family: var(--heading-font); color: var(--maroon); font-size: 1.3rem; margin-bottom: 5px; text-transform: capitalize; }
 .contact-card-v2 p { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #888; margin-bottom: 0; }
 
 .contact-link {
@@ -524,7 +526,7 @@ body {
     text-align: center;
 }
 
-.footer-names { font-family: var(--heading-font); color: var(--maroon); font-size: 2rem; margin-bottom: 15px; }
+.footer-names { font-family: var(--heading-font); color: var(--maroon); font-size: 2rem; margin-bottom: 15px; text-transform: capitalize; }
 .floral-divider-small { margin: 15px 0; width: 100%; display: flex; justify-content: center; }
 .footer-date { letter-spacing: 3px; font-weight: 700; margin-bottom: 25px; color: #888; font-size: 1.1rem; }
 
