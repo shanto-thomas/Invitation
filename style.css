@@ -281,54 +281,143 @@ body {
 }
 
 /* Digital Card Frame */
-.digital-card-frame {
-    background: #fff;
-    padding: 60px 40px;
-    border: 1px solid #eee;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.03);
-    text-align: center;
+.invitation-section {
+    background: linear-gradient(135deg, #fdfbf7 0%, #f5efde 100%);
     position: relative;
-    max-width: 600px;
-    margin: 0 auto;
-    width: 100%;
 }
 
-.card-ornament.top { margin-bottom: 25px; }
-.card-ornament.bottom { margin-top: 25px; }
+.digital-card-frame {
+    background: #fff;
+    padding: 80px 50px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.05);
+    text-align: center;
+    position: relative;
+    max-width: 650px;
+    margin: 0 auto;
+    width: 100%;
+    border-radius: 4px;
+}
 
-.invitation-heading { font-family: var(--accent-font); font-size: 2.5rem; color: var(--maroon); margin-bottom: 15px; }
-.invitation-script { font-style: italic; color: #888; margin-bottom: 20px; }
-.invitation-text { margin-bottom: 20px; color: #555; font-size: 0.95rem; }
+.digital-card-frame::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    pointer-events: none;
+}
+
+.card-ornament.top { margin-bottom: 30px; }
+.card-ornament.bottom { margin-top: 30px; }
+
+.invitation-heading { 
+    font-family: var(--heading-font); 
+    font-size: 1.2rem; 
+    text-transform: uppercase; 
+    letter-spacing: 4px; 
+    color: var(--gold); 
+    margin-bottom: 25px; 
+    font-weight: 400;
+}
+
+.invitation-script { 
+    font-family: var(--body-font);
+    font-size: 1rem;
+    color: #777; 
+    margin-bottom: 30px; 
+    line-height: 1.8;
+}
 
 .invitation-names {
     display: flex;
     flex-direction: column;
-    margin: 20px 0;
+    margin: 30px 0;
 }
 
-.invitation-names .name { font-family: var(--heading-font); font-size: 2.2rem; color: var(--maroon); font-weight: 700; line-height: 1.2; }
-.invitation-names .and { font-family: var(--accent-font); font-size: 2rem; margin: 5px 0; }
+.invitation-names .name { 
+    font-family: var(--accent-font); 
+    font-size: 3.5rem; 
+    color: var(--maroon); 
+    line-height: 1; 
+}
 
-.divider { width: 80px; margin: 20px auto; opacity: 0.2; }
+.invitation-names .and { 
+    font-family: var(--heading-font); 
+    font-size: 1.5rem; 
+    color: var(--gold);
+    margin: 10px 0; 
+}
+
+.divider { 
+    width: 100px; 
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+    margin: 30px auto; 
+    position: relative;
+}
+
+.divider i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 0 10px;
+    font-size: 0.8rem;
+}
+
+
+.invitation-text { 
+    margin-bottom: 40px; 
+    color: #555; 
+    font-size: 1rem; 
+    line-height: 1.8;
+}
 
 /* Countdown */
+.countdown-container {
+    margin: 40px 0;
+}
+
 .countdown-badge {
     display: flex;
     justify-content: center;
     gap: 15px;
     margin-top: 30px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* Prevent wrapping on most devices */
 }
 
 .time-part {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 60px;
+    flex: 1;
+    max-width: 80px;
+    padding: 12px 5px;
+    background: #fdfbf7;
+    border-radius: 8px;
+    border: 1px solid rgba(212, 175, 55, 0.1);
 }
 
-.time-part span { font-family: var(--heading-font); font-size: 1.6rem; font-weight: 700; color: var(--maroon); }
-.time-part small { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 1px; color: #999; }
+.time-part span { 
+    font-family: var(--heading-font); 
+    font-size: 1.8rem; 
+    font-weight: 400; 
+    color: var(--maroon); 
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+.time-part small { 
+    font-size: 0.55rem; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    color: #999; 
+}
+
 
 /* Venue Section */
 .map-container-wrapper {
@@ -344,12 +433,15 @@ body {
 
 /* Contacts Grid */
 .contacts-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    display: flex;
+    justify-content: center;
     gap: 20px;
+    max-width: 400px;
+    margin: 0 auto;
 }
 
 .contact-card-v2 {
+    width: 100%;
     background: #fff;
     padding: 25px;
     border-radius: 10px;
@@ -361,6 +453,7 @@ body {
     justify-content: space-between;
     gap: 20px;
 }
+
 
 .contact-info-text { flex: 1; }
 .contact-card-v2 h4 { font-family: var(--heading-font); color: var(--maroon); font-size: 1.3rem; margin-bottom: 5px; }
@@ -544,9 +637,15 @@ body {
     .section-padding { padding: 60px 0; }
     .section-heading { font-size: 1.8rem; margin-bottom: 40px; }
     
-    .digital-card-frame { padding: 40px 20px; }
-    .invitation-heading { font-size: 2.2rem; }
-    .invitation-names .name { font-size: 1.8rem; }
+    .digital-card-frame { padding: 40px 15px; }
+    .invitation-heading { font-size: 0.9rem; letter-spacing: 2px; }
+    .invitation-names .name { font-size: 2.2rem; }
+    .invitation-names .and { font-size: 1rem; }
+    .invitation-text { font-size: 0.85rem; margin-bottom: 25px; }
+    .time-part { padding: 8px 2px; }
+    .time-part span { font-size: 1.4rem; }
+    .countdown-badge { gap: 8px; }
+
     
     .bottom-navigation { width: 92%; height: 70px; bottom: 15px; }
     
