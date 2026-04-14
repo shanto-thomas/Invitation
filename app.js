@@ -46,20 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Auto-play on first interaction
-    const startMusic = () => {
-        if (!isPlaying) {
-            bgMusic.play().then(() => {
-                isPlaying = true;
-                musicTrigger.classList.add('playing');
-                musicTrigger.innerHTML = '<i class="fas fa-pause"></i><div class="music-tooltip">Pause Music</div>';
-            }).catch(() => {});
-            document.removeEventListener('click', startMusic);
-            document.removeEventListener('touchstart', startMusic);
-        }
-    };
-    document.addEventListener('click', startMusic);
-    document.addEventListener('touchstart', startMusic);
+
 
     // Countdown Timer Logic
     const weddingDate = new Date("April 30, 2026 10:30:00").getTime();
