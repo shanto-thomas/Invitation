@@ -353,6 +353,16 @@ body {
     margin: 10px 0; 
 }
 
+.main-invite-date {
+    font-family: var(--heading-font);
+    font-size: 1.4rem;
+    color: var(--gold);
+    margin-top: 10px;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+
+
 .divider { 
     width: 100px; 
     height: 1px;
@@ -437,8 +447,9 @@ body {
 .contacts-grid {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 20px;
-    max-width: 400px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
@@ -578,21 +589,72 @@ body {
 /* Music Trigger */
 .music-toggle-v2 {
     position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 45px;
-    height: 45px;
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(5px);
+    top: 25px;
+    right: 25px;
+    width: 50px;
+    height: 50px;
+    background: #fff;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     z-index: 5001;
     color: var(--maroon);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(81, 26, 26, 0.1);
 }
+
+.music-toggle-v2:hover {
+    transform: scale(1.1);
+    box-shadow: 0 15px 35px rgba(81, 26, 26, 0.15);
+}
+
+.music-toggle-v2.playing {
+    background: var(--maroon);
+    color: #fff;
+    animation: musicPulse 2s infinite;
+}
+
+.music-toggle-v2.playing i {
+    animation: spin 3s linear infinite;
+}
+
+
+.music-tooltip {
+    position: absolute;
+    right: 60px;
+    background: var(--maroon);
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    pointer-events: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.music-toggle-v2:hover .music-tooltip {
+    opacity: 1;
+    visibility: visible;
+    right: 65px;
+}
+
+@keyframes musicPulse {
+    0% { box-shadow: 0 0 0 0 rgba(81, 26, 26, 0.4); }
+    70% { box-shadow: 0 0 0 15px rgba(81, 26, 26, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(81, 26, 26, 0); }
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
 
 /* Modal */
 .modal-overlay {
